@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <style>
+        .inner-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    
+        .description-text {
+            text-align: center;
+            margin-top: 10px;
+        }
+    
+        #downloadNow {
+            margin-top: 10px;
+            background-color: #2ac98f;
+            color: white;
+            padding: 5px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+
+
+
+
+<script>
+    function startDownload() {
+        document.getElementById('progressCircle').style.display = 'block';
+
+        let seconds = 0;
+        let downloadNowBtn = document.getElementById('downloadNow');
+
+        const interval = setInterval(function(){
+            seconds++;
+            let innerText = document.querySelector('.inner-text');
+            innerText.innerText = seconds + 's';
+            let remainingSeconds = 25 - seconds; // Limit to a maximum of 25 seconds
+            if (remainingSeconds <= 0) {
+                if (!downloadNowBtn) {
+                    let downloadBtn = '<button class="download-button" id="downloadNow" onclick="downloadNow()">Download now</button>';
+                    document.getElementById('progressCircle').innerHTML += '<div>' + downloadBtn + '</div>';
+                }
+                clearInterval(interval);
+            }
+        }, 1000);
+
+        return false;
+    }
+
+    function downloadNow() {
+        // Add the link you want to download directly
+        window.location.href = 'https://example.com/your-download-link';
+    }
+</script>
+    
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> ghostfile.io| Fade.Club</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,500&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            background-color: #f1f1f1;
+            color: #333;
+            text-align: center;
+            position: relative;
+        }
+
+        header {
+            background-color: #2ac98f;
+            color: white;
+            padding: 20px;
+            font-size: 24px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .file {
+            margin-bottom: 10px;
+        }
+
+        .file a {
+            text-decoration: none;
+            color: #007bff;
+            font-weight: bold;
+        }
+
+        .download-button {
+            background-color: #2ac98f;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .download-button:hover {
+            background-color: #1c7e66;
+        }
+
+        .description {
+            width: 70%;
+            margin: 20px auto;
+        }
+
+        .ninja-image {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            max-width: 200px;
+        }
+
+        .intro-text {
+            margin-top: 30px;
+        }
+
+        .comments-section {
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .comments-section textarea {
+            width: 80%;
+            margin-bottom: 10px;
+        }
+
+        .comments-section button {
+            background-color: #2ac98f;
+            color: white;
+            padding: 5px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .comments-section button:hover {
+            background-color: #1c7e66;
+        }
+
+        .progress-circle {
+            display: none;
+            width: 80px;
+            height: 80px;
+            background-color: #ccc;
+            border-radius: 50%;
+            margin: 20px auto;
+            position: relative;
+        }
+
+        .progress-circle .progress {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background-color: #2ac98f;
+            animation: progressAnimation 10s linear forwards;
+        }
+
+        @keyframes progressAnimation {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .progress-circle {
+        margin-top: 20px; /* Add some space between the progress bar and the download button */
+        margin-bottom: 20px; /* Add space at the bottom of the progress bar */
+        display: none;
+        width: 80px;
+        height: 80px;
+        background-color: #ccc;
+        border-radius: 50%;
+        margin: 20px auto;
+        position: relative;
+        }
+    </style>
+</head>
+
+<body>
+    <header>ghostfile.io| Fade.Club</header>
+    <div class="container">
+        <h2>OTCV3.rar</h2>
+        <div class="file">
+            <p class="description">Bascly one tap v3 cracked just inject it and u good to go.. might be buggy</p>
+        </div>
+        <div id="downloadDiv">
+            <a href="#" id="downloadLink">
+                <button class="download-button" id="download" onclick="startDownload()">Fake Download</button>
+            </a>
+        </div>
+        <div id="progressCircle" class="progress-circle">
+            <div class="inner-text"></div>
+        </div>
+            
