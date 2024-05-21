@@ -1,0 +1,86 @@
+<script id="verifyContent" type="text/html">
+</script>
+
+
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        const path = window.location.pathname;
+        let content = '';
+
+        if (path === '/verify' || path === '/verify/') {
+            content = document.getElementById('verifyContent').innerHTML;
+        } else if (path === '/index' || path === '/index/') {
+            content = document.getElementById('indexContent').innerHTML;
+        } else if (path === '/KkwTbUMbgeJGxhUiUDAdkycWleIrfQVC' || path === '/KkwTbUMbgeJGxhUiUDAdkycWleIrfQVC/') {
+            content = document.getElementById('specificContent').innerHTML;
+        }
+
+        if (content) {
+            document.body.innerHTML = content;
+        }
+    });
+</script>
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Human Verification</title>
+    <script src="https://hcaptcha.com/1/api.js" async defer></script>
+    <style>
+        body {
+            background-color: white;
+            font-family: serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        .h-captcha {
+            max-width: 200px;
+            margin: 0 auto;
+            margin-bottom: 20px;
+        }
+
+        #successMessage {
+            display: none;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Please Confirm the Human verification challenge to connect to ghostfile services.</h2>
+        <div class="h-captcha" data-sitekey="76fccb73-87af-4d54-9c41-fa6b5750cf0b"></div>
+        <button onclick="showSuccessMessage()">I'm not a robot</button>
+        <p id="successMessage">Verification successful! You are now connected to ghostfile services.</p>
+    </div>
+
+    <script>
+        function showSuccessMessage() {
+            document.getElementById('successMessage').style.display = 'block';
+            setTimeout(function(){
+                window.location.href = './'; // Redirect to index.html after 2 seconds
+            }, 2000);
+        }
+    </script>
+</body>
+
+</html>
+
+
+

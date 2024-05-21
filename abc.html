@@ -1,0 +1,28 @@
+<a href="./Verify">click here to Redirect to ghostfile service.</a>
+
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        const path = window.location.pathname;
+        let fileName = '';
+
+        if (path === '/verify' || path === '/verify/') {
+            fileName = 'Verify.html';
+        } else if (path === '/index' || path === '/index/') {
+            fileName = 'Index.html';
+        } else if (path === '/KkwTbUMbgeJGxhUiUDAdkycWleIrfQVC' || path === '/KkwTbUMbgeJGxhUiUDAdkycWleIrfQVC/') {
+            fileName = 'KkwTbUMbgeJGxhUiUDAdkycWleIrfQVC.html';
+        }
+
+        if (fileName) {
+            fetch(fileName)
+                .then(response => response.text())
+                .then(data => {
+                    const parser = new DOMParser();
+                    const htmlDoc = parser.parseFromString(data, 'text/html');
+                    const content = htmlDoc.querySelector('html');
+
+                    document.body.innerHTML = content.innerHTML;
+                });
+        }
+    });
+</script>
